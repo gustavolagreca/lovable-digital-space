@@ -63,7 +63,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="h-screen bg-background relative overflow-hidden">
       {/* Background image */}
       <div
         className="fixed inset-0 z-0"
@@ -83,10 +83,10 @@ const Index = () => {
         zIndex: 1,
       }} />
 
-      <div className="relative z-10 max-w-[680px] mx-auto px-5 py-16 sm:py-24">
+      <div className="relative z-10 max-w-[680px] mx-auto px-5 py-6 sm:py-8 h-full overflow-y-auto scrollbar-hide">
         {/* Hero Header */}
         <motion.header
-          className="flex flex-col items-center text-center space-y-8 pb-12"
+          className="flex flex-col items-center text-center space-y-4 pb-6"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -99,12 +99,12 @@ const Index = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="relative w-32 h-32 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-primary/20">
+            <div className="relative w-24 h-24 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-primary/20">
               <img src={logo} alt="Cognixis Tutor" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-xs font-medium tracking-wide"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -115,11 +115,11 @@ const Index = () => {
               Powered by Advanced AI
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-[1.1]">
               Book
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"> Rewriter</span>
             </h1>
-            <p className="text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
+            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
               Transforme livros inteiros com inteligência artificial. 
               Adaptado ao seu público, no idioma que precisar.
             </p>
@@ -145,10 +145,10 @@ const Index = () => {
         </motion.header>
 
         {/* Cards */}
-        <div className="space-y-5">
+        <div className="space-y-3">
           {/* Step 1 */}
           <motion.section
-            className="glass-card p-7 space-y-5"
+            className="glass-card p-5 space-y-3"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -166,7 +166,7 @@ const Index = () => {
 
           {/* Step 2 */}
           <motion.section
-            className="glass-card p-7 space-y-6"
+            className="glass-card p-5 space-y-4"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -211,7 +211,7 @@ const Index = () => {
 
           {/* Step 3 */}
           <motion.section
-            className="glass-card p-7 space-y-5"
+            className="glass-card p-5 space-y-3"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -278,7 +278,7 @@ const Index = () => {
 
         {/* Footer */}
         <motion.footer
-          className="text-center pt-16 pb-8"
+          className="text-center pt-6 pb-4"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
