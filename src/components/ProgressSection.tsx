@@ -12,7 +12,7 @@ const ProgressSection = ({ progress, status, isComplete, downloadUrl }: Progress
   if (isComplete) {
     return (
       <div className="step-card text-center space-y-4">
-        <CheckCircle2 className="w-16 h-16 text-green-400 mx-auto" />
+        <CheckCircle2 className="w-16 h-16 text-accent mx-auto" />
         <h3 className="text-xl font-bold text-foreground">Livro reescrito com sucesso!</h3>
         <p className="text-muted-foreground">O PDF foi gerado e enviado para o seu email.</p>
         {downloadUrl && (
