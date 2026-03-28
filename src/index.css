@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 20% 92%;
+    --background: 222 47% 5%;
+    --foreground: 210 20% 95%;
 
-    --card: 222 40% 10%;
-    --card-foreground: 210 20% 92%;
+    --card: 222 40% 8%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 222 40% 10%;
-    --popover-foreground: 210 20% 92%;
+    --popover: 222 40% 8%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 210 100% 52%;
+    --primary: 200 85% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 30% 14%;
-    --secondary-foreground: 210 15% 75%;
+    --secondary: 222 30% 12%;
+    --secondary-foreground: 210 15% 70%;
 
-    --muted: 222 25% 13%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 222 25% 10%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 195 85% 50%;
+    --accent: 185 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 20% 16%;
-    --input: 222 25% 14%;
-    --ring: 210 100% 52%;
+    --border: 222 15% 14%;
+    --input: 222 25% 12%;
+    --ring: 200 85% 48%;
 
     --radius: 0.75rem;
 
-    --surface-glass: 222 40% 10% / 0.6;
-    --surface-elevated: 222 35% 12%;
-    --border-subtle: 222 15% 20%;
-    --border-glow: 210 100% 52%;
+    --surface-glass: 222 40% 8%;
+    --surface-elevated: 222 35% 9%;
+    --border-subtle: 222 12% 18%;
+    --border-glow: 200 85% 48%;
 
-    --sidebar-background: 222 40% 8%;
-    --sidebar-foreground: 210 15% 75%;
-    --sidebar-primary: 210 100% 52%;
+    --sidebar-background: 222 40% 6%;
+    --sidebar-foreground: 210 15% 70%;
+    --sidebar-primary: 200 85% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 30% 14%;
-    --sidebar-accent-foreground: 210 15% 75%;
-    --sidebar-border: 222 20% 16%;
-    --sidebar-ring: 210 100% 52%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 15% 70%;
+    --sidebar-border: 222 15% 14%;
+    --sidebar-ring: 200 85% 48%;
   }
 }
 
@@ -63,35 +63,35 @@
   }
 
   ::selection {
-    background: hsl(210 100% 52% / 0.3);
+    background: hsl(200 85% 48% / 0.3);
     color: hsl(0 0% 100%);
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(222 20% 22%);
-    border-radius: 3px;
+    background: hsl(222 15% 20%);
+    border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(222 20% 30%);
+    background: hsl(222 15% 28%);
   }
 }
 
 @layer components {
-  /* Glass card system */
+  /* Glass card — frosted, layered, premium */
   .glass-card {
-    background: hsl(var(--surface-elevated));
-    border: 1px solid hsl(var(--border-subtle));
-    border-radius: 1rem;
-    backdrop-filter: blur(20px);
+    background: hsl(var(--surface-elevated) / 0.7);
+    border: 1px solid hsl(var(--border-subtle) / 0.6);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(24px) saturate(1.4);
     position: relative;
     overflow: hidden;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
   }
 
   .glass-card::before {
@@ -100,58 +100,64 @@
     inset: 0;
     border-radius: inherit;
     background: linear-gradient(
-      135deg,
-      hsl(210 100% 52% / 0.03) 0%,
-      transparent 50%,
-      hsl(195 85% 50% / 0.02) 100%
+      165deg,
+      hsl(200 85% 48% / 0.04) 0%,
+      transparent 40%,
+      hsl(185 80% 50% / 0.02) 100%
     );
     pointer-events: none;
   }
 
-  /* Step indicator */
+  .glass-card:hover {
+    border-color: hsl(var(--border-subtle) / 0.9);
+    box-shadow: 0 0 40px -10px hsl(200 85% 48% / 0.06);
+  }
+
+  /* Step indicator — refined glow */
   .step-indicator {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.625rem;
     font-size: 0.8rem;
     font-weight: 700;
     font-family: 'JetBrains Mono', monospace;
-    background: linear-gradient(135deg, hsl(210 100% 52%), hsl(195 85% 50%));
+    background: linear-gradient(145deg, hsl(200 85% 48%), hsl(185 75% 45%));
     color: hsl(0 0% 100%);
     flex-shrink: 0;
+    box-shadow: 0 4px 16px hsl(200 85% 48% / 0.25), inset 0 1px 0 hsl(0 0% 100% / 0.15);
   }
 
   /* Upload zone */
   .upload-zone-pro {
-    border: 1.5px dashed hsl(var(--border-subtle));
-    border-radius: 0.875rem;
+    border: 1.5px dashed hsl(var(--border-subtle) / 0.8);
+    border-radius: 1rem;
     padding: 3rem 2rem;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: hsl(var(--muted));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: hsl(var(--muted) / 0.5);
     position: relative;
   }
 
   .upload-zone-pro:hover {
-    border-color: hsl(var(--border-glow));
-    background: hsl(222 35% 12%);
-    box-shadow: 0 0 0 4px hsl(210 100% 52% / 0.08), inset 0 1px 0 hsl(210 100% 52% / 0.05);
+    border-color: hsl(var(--border-glow) / 0.5);
+    background: hsl(var(--surface-elevated) / 0.8);
+    box-shadow: 0 0 0 4px hsl(200 85% 48% / 0.06), 0 8px 32px -8px hsl(200 85% 48% / 0.08);
   }
 
   .upload-zone-pro.dragging {
     border-color: hsl(var(--border-glow));
-    background: hsl(210 100% 52% / 0.06);
-    box-shadow: 0 0 0 4px hsl(210 100% 52% / 0.12);
+    background: hsl(200 85% 48% / 0.05);
+    box-shadow: 0 0 0 4px hsl(200 85% 48% / 0.1), 0 0 60px -10px hsl(200 85% 48% / 0.15);
   }
 
   .upload-zone-pro.has-file {
     border-style: solid;
-    border-color: hsl(var(--border-glow) / 0.4);
-    background: hsl(210 100% 52% / 0.04);
+    border-color: hsl(var(--border-glow) / 0.3);
+    background: hsl(200 85% 48% / 0.03);
   }
 
   /* Audience option */
@@ -160,24 +166,25 @@
     align-items: center;
     gap: 0.875rem;
     padding: 0.875rem 1.125rem;
-    border-radius: 0.75rem;
-    border: 1px solid hsl(var(--border-subtle));
-    background: hsl(var(--muted));
+    border-radius: 0.875rem;
+    border: 1px solid hsl(var(--border-subtle) / 0.6);
+    background: hsl(var(--muted) / 0.4);
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: left;
     width: 100%;
   }
 
   .audience-option:hover {
-    border-color: hsl(var(--border-glow) / 0.5);
-    background: hsl(222 30% 14%);
+    border-color: hsl(var(--border-glow) / 0.4);
+    background: hsl(var(--surface-elevated) / 0.8);
+    transform: translateY(-1px);
   }
 
   .audience-option.selected {
-    border-color: hsl(var(--border-glow));
-    background: hsl(210 100% 52% / 0.08);
-    box-shadow: 0 0 0 3px hsl(210 100% 52% / 0.1);
+    border-color: hsl(var(--border-glow) / 0.6);
+    background: hsl(200 85% 48% / 0.06);
+    box-shadow: 0 0 0 3px hsl(200 85% 48% / 0.08), 0 4px 20px -4px hsl(200 85% 48% / 0.12);
   }
 
   .audience-option .option-radio {
@@ -186,7 +193,7 @@
     border-radius: 50%;
     border: 2px solid hsl(var(--border-subtle));
     flex-shrink: 0;
-    transition: all 0.2s;
+    transition: all 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,6 +202,7 @@
   .audience-option.selected .option-radio {
     border-color: hsl(var(--primary));
     background: hsl(var(--primary));
+    box-shadow: 0 0 8px hsl(200 85% 48% / 0.4);
   }
 
   .audience-option.selected .option-radio::after {
@@ -205,30 +213,31 @@
     background: white;
   }
 
-  /* Primary CTA button */
+  /* CTA button — premium gradient with glow */
   .btn-cta {
     width: 100%;
     padding: 1rem 2rem;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     font-size: 0.9375rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: hsl(0 0% 100%);
-    background: linear-gradient(135deg, hsl(210 100% 52%), hsl(210 100% 42%));
+    background: linear-gradient(145deg, hsl(200 85% 48%), hsl(200 80% 38%));
     border: none;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 24px hsl(200 85% 48% / 0.2), 0 1px 3px hsl(0 0% 0% / 0.2), inset 0 1px 0 hsl(0 0% 100% / 0.1);
   }
 
   .btn-cta::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, hsl(210 100% 60%), hsl(195 85% 50%));
+    background: linear-gradient(145deg, hsl(200 85% 55%), hsl(185 80% 45%));
     opacity: 0;
-    transition: opacity 0.25s;
+    transition: opacity 0.35s;
   }
 
   .btn-cta:hover::before {
@@ -236,8 +245,8 @@
   }
 
   .btn-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px hsl(210 100% 52% / 0.3), 0 2px 8px hsl(210 100% 52% / 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px hsl(200 85% 48% / 0.35), 0 4px 12px hsl(200 85% 48% / 0.2), inset 0 1px 0 hsl(0 0% 100% / 0.15);
   }
 
   .btn-cta:active {
@@ -245,7 +254,7 @@
   }
 
   .btn-cta:disabled {
-    opacity: 0.4;
+    opacity: 0.35;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
@@ -260,10 +269,10 @@
     z-index: 1;
   }
 
-  /* Progress bar */
+  /* Progress */
   .progress-track {
     width: 100%;
-    height: 0.375rem;
+    height: 0.25rem;
     border-radius: 1rem;
     background: hsl(var(--muted));
     overflow: hidden;
@@ -272,11 +281,11 @@
   .progress-fill {
     height: 100%;
     border-radius: 1rem;
-    background: linear-gradient(90deg, hsl(210 100% 52%), hsl(195 85% 50%));
+    background: linear-gradient(90deg, hsl(200 85% 48%), hsl(185 80% 50%));
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 12px hsl(200 85% 48% / 0.5);
   }
 
-  /* Mono text */
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
