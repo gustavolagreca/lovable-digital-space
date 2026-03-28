@@ -62,7 +62,7 @@ const AudienceSelector = ({ selected, onSelect }: AudienceSelectorProps) => {
               <p className={`text-sm font-medium ${isSelected ? "text-foreground" : "text-secondary-foreground"}`}>
                 {opt.label}
               </p>
-              <p className="text-xs text-muted-foreground mt-0.5 truncate">
+              <p className="text-xs text-muted-foreground mt-0.5">
                 {opt.description}
               </p>
             </div>

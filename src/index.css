@@ -165,7 +165,8 @@
     display: flex;
     align-items: center;
     gap: 0.875rem;
-    padding: 0.875rem 1.125rem;
+    padding: 1rem 1.125rem;
+    min-height: 4.5rem;
     border-radius: 0.875rem;
     border: 1px solid hsl(var(--border-subtle) / 0.6);
     background: hsl(var(--muted) / 0.4);
