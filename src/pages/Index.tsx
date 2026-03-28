@@ -5,6 +5,8 @@ import logo from "@/assets/cognixis-logo.png";
 import FileUpload from "@/components/FileUpload";
 import AudienceSelector from "@/components/AudienceSelector";
 import LanguageSelect from "@/components/LanguageSelect";
+import RewriteModeToggle from "@/components/RewriteModeToggle";
+import DetailLevelSelector from "@/components/DetailLevelSelector";
 import ProgressPanel from "@/components/ProgressPanel";
 import NeuralBackground from "@/components/NeuralBackground";
 import { useToast } from "@/hooks/use-toast";
@@ -23,6 +25,8 @@ const Index = () => {
   const [file, setFile] = useState<File | null>(null);
   const [audience, setAudience] = useState("");
   const [language, setLanguage] = useState("Português Europeu");
+  const [rewriteMode, setRewriteMode] = useState<"full" | "summarized">("full");
+  const [detailLevel, setDetailLevel] = useState("normal");
   const [email, setEmail] = useState("");
   const [processing, setProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -166,9 +170,23 @@ const Index = () => {
 
             <div className="space-y-2">
               <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Modo de Reescrita
+              </label>
+              <RewriteModeToggle mode={rewriteMode} onChange={setRewriteMode} />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                 Público-Alvo
               </label>
               <AudienceSelector selected={audience} onSelect={setAudience} />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                Nível de Detalhamento
+              </label>
+              <DetailLevelSelector level={detailLevel} onChange={setDetailLevel} />
             </div>
 
             <div className="space-y-2">
