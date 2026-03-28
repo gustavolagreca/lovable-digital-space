@@ -144,8 +144,8 @@
   .upload-zone-pro {
     border: 1.5px dashed hsl(var(--border-subtle) / 0.8);
     border-radius: 1rem;
-    padding: 3rem 2rem;
-    text-align: center;
+    padding: 1rem 1.5rem;
+    text-align: left;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: hsl(var(--muted) / 0.5);

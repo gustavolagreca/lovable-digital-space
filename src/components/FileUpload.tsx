@@ -89,19 +89,17 @@ const FileUpload = ({ file, onFileChange }: FileUploadProps) => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="flex flex-col items-center gap-4"
+            className="flex items-center gap-3"
           >
-            <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
-              <Upload className="w-6 h-6 text-muted-foreground" />
+            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+              <Upload className="w-4 h-4 text-muted-foreground" />
             </div>
             <div>
               <p className="text-sm text-foreground">
-                Arraste o ficheiro ou{" "}
+                Arraste ou{" "}
                 <span className="text-primary font-medium cursor-pointer">selecione</span>
               </p>
-              <p className="text-xs text-muted-foreground mt-1.5 font-mono">
-                Formatos suportados: PDF, EPUB
-              </p>
+              <p className="text-[11px] text-muted-foreground font-mono">PDF, EPUB</p>
             </div>
           </motion.div>
         )}
