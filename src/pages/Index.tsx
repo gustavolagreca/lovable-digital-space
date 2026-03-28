@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Mail, Sparkles, Zap, Shield } from "lucide-react";
 import logo from "@/assets/cognixis-logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import FileUpload from "@/components/FileUpload";
 import AudienceSelector from "@/components/AudienceSelector";
 import LanguageSelect from "@/components/LanguageSelect";
@@ -63,6 +64,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Background image */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.35,
+        }}
+      />
       <NeuralBackground />
 
       {/* Top ambient light */}
@@ -87,7 +99,7 @@ const Index = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-transparent blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-primary/20">
+            <div className="relative w-32 h-32 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-primary/20">
               <img src={logo} alt="Cognixis Tutor" className="w-full h-full object-cover" />
             </div>
           </motion.div>
