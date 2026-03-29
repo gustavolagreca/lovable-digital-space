@@ -8,7 +8,7 @@ interface DetailLevelSelectorProps {
 const levels = [
   { id: "lite", label: "Lite", description: "Menos detalhes, mais conciso" },
   { id: "normal", label: "Normal", description: "Equilíbrio ideal" },
-  { id: "expandido", label: "Expandido", description: "Máximo de detalhes" },
+  { id: "expandido", label: "Espandido", description: "Máximo de detalhes" },
 ];
 
 const DetailLevelSelector = ({ level, onChange }: DetailLevelSelectorProps) => {
