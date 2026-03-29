@@ -176,7 +176,6 @@ const Index = () => {
           >
             <div className="flex items-center gap-4">
               <div className="step-indicator">2</div>
-              </div>
               <div>
                 <h2 className="text-sm font-semibold text-foreground">Modo OCR</h2>
                 <p className="text-xs text-muted-foreground">Tipo de leitura do ficheiro</p>
