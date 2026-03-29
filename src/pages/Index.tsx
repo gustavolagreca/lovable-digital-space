@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Mail, Sparkles, Zap, Shield } from "lucide-react";
+import { ArrowRight, Mail, Sparkles, Zap, Shield, Eye } from "lucide-react";
 import logo from "@/assets/cognixis-logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import FileUpload from "@/components/FileUpload";
+import OcrModeSelector from "@/components/OcrModeSelector";
 import AudienceSelector from "@/components/AudienceSelector";
 import LanguageSelect from "@/components/LanguageSelect";
 import RewriteModeToggle from "@/components/RewriteModeToggle";
@@ -63,7 +64,7 @@ const Index = () => {
   };
 
   return (
-    <div className="h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen bg-background relative">
       {/* Background image */}
       <div
         className="fixed inset-0 z-0"
@@ -83,7 +84,7 @@ const Index = () => {
         zIndex: 1,
       }} />
 
-      <div className="relative z-10 max-w-[680px] mx-auto px-5 py-6 sm:py-8 h-full overflow-y-auto scrollbar-hide">
+      <div className="relative z-10 max-w-[680px] mx-auto px-5 py-6 sm:py-8">
         {/* Hero Header */}
         <motion.header
           className="flex flex-col items-center text-center space-y-4 pb-6"
@@ -162,6 +163,26 @@ const Index = () => {
               </div>
             </div>
             <FileUpload file={file} onFileChange={setFile} />
+          </motion.section>
+
+          {/* OCR Mode */}
+          <motion.section
+            className="glass-card p-5 space-y-3"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1.5}
+          >
+            <div className="flex items-center gap-4">
+              <div className="step-indicator">
+                <Eye className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <h2 className="text-sm font-semibold text-foreground">Modo OCR</h2>
+                <p className="text-xs text-muted-foreground">Tipo de leitura do ficheiro</p>
+              </div>
+            </div>
+            <OcrModeSelector mode={ocrMode} onChange={setOcrMode} />
           </motion.section>
 
           {/* Step 2 */}
