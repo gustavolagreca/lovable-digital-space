@@ -25,7 +25,8 @@ const fadeUp = {
 
 const Index = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [audience, setAudience] = useState("");
+  const [audience, setAudience] = useState("especialistas");
+  const [ocrMode, setOcrMode] = useState("flash");
   const [language, setLanguage] = useState("Português Europeu");
   const [rewriteMode, setRewriteMode] = useState<"full" | "summarized">("full");
   const [detailLevel, setDetailLevel] = useState("normal");
