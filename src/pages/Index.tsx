@@ -175,9 +175,7 @@ const Index = () => {
             custom={1.5}
           >
             <div className="flex items-center gap-4">
-              <div className="step-indicator">
-                <Eye className="w-3.5 h-3.5" />
-              </div>
+              <div className="step-indicator">2</div>
               <div>
                 <h2 className="text-sm font-semibold text-foreground">Modo OCR</h2>
                 <p className="text-xs text-muted-foreground">Tipo de leitura do ficheiro</p>
@@ -195,7 +193,7 @@ const Index = () => {
             custom={2}
           >
             <div className="flex items-center gap-4">
-              <div className="step-indicator">2</div>
+              <div className="step-indicator">3</div>
               <div>
                 <h2 className="text-sm font-semibold text-foreground">Configurações</h2>
                 <p className="text-xs text-muted-foreground">Público-alvo e idioma de saída</p>
@@ -240,7 +238,7 @@ const Index = () => {
             custom={3}
           >
             <div className="flex items-center gap-4">
-              <div className="step-indicator">3</div>
+              <div className="step-indicator">4</div>
               <div>
                 <h2 className="text-sm font-semibold text-foreground">Entrega</h2>
                 <p className="text-xs text-muted-foreground">Receba o resultado por email</p>
